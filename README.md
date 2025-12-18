@@ -1,4 +1,6 @@
 # slf_segmentation
+[![DOI](https://zenodo.org/badge/1115127521.svg)](https://doi.org/10.5281/zenodo.17981736)
+<br>
 Code supplement: Mapping small landscape features in agricultural lands using CNN-based semantic segmentation
 
 ## Environment setup

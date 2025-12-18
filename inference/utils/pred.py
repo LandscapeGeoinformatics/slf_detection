@@ -139,7 +139,7 @@ def apply_model_and_save_prediction_patches(
     print(f"Saved {patch_idx} patch predictions in: {patch_output_folder}")
 
 
-def run_inference_on_folder(
+def run_inference_patches(
     input_folder,
     output_folder,
     model,

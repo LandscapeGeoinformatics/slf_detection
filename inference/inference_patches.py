@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 import segmentation_models_pytorch as smp
-from utils.pred import run_inference_on_folder
+from utils.pred import run_inference_patches
 
 # define device ('cpu' or 'cuda')
 print('Using PyTorch version:', torch.__version__)
@@ -25,18 +25,14 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 torch.set_grad_enabled(False) # no gradients needed for inference
 
-# load model
-n_channel = 3
-n_class = 1 # binary=1
-
 # initialize model
 model = smp.Unet(
-    in_channels=n_channel, # adjust to image channel n
-    classes=n_class,
+    in_channels=3, # adjust to image channel n
+    classes=1,
 )
 
 # load model weights
-checkpoint = torch.load('/gpfs/helios/home/fauzan/landscape_elements/working/scripts/train_aug/best_model_unetresnet50_bce_1e-4.pt', map_location=device)
+checkpoint = torch.load('model.pt', map_location=device)
 model.load_state_dict(checkpoint['model_state_dict'])
 model = model.to(device)
 
@@ -44,7 +40,7 @@ epochs = checkpoint['epoch']
 print(f"Load model trained for {epochs+1} epochs")
 
 # apply model
-run_inference_on_folder(
+run_inference_patches(
     input_folder="/landscape_elements/working/orthophotos/summer/mosaic", 
     output_folder="/landscape_elements/working/pred", 
     model=model,

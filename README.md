@@ -1,9 +1,9 @@
 Code supplement: Mapping small landscape features in agricultural lands using CNN-based semantic segmentation
 
 ## Environment setup
-1) Install micromamba. See https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html
-2) Clone the repository
-3) Navigate to the repository folder, and create a new micromamba environment using `micromamba env create --file environment.yml`
+- Install micromamba. See https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html
+- Clone the repository
+- Navigate to the repository folder, and create a new micromamba environment using `micromamba env create --file environment.yml`
 
 ## Usage
 ### Model training

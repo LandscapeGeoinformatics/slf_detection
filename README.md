@@ -11,7 +11,6 @@ Code supplement: Mapping small landscape features in agricultural lands using CN
 ## Usage
 ### Model training
 - Specify input data and hyperparameters in `training/train.py` and run
-- Use the stored weights (*.pt) in testing and inference steps
 - Use the training logs (*.csv) to plot the model behavior during training with `notebook/plot_loss.ipynb`
 ### Model testing
 - Run `evaluation/test_inference.py` on one or more large images (e.g. 5x5km2) to obtain mosaicked probability prediction raster(s)
